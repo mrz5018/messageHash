@@ -4,7 +4,6 @@ from messageHandler.models import MessageHash
 import hashlib
 import json
 
-
 @csrf_exempt 
 def index(request):
 	if (request.method == "POST"):
@@ -19,10 +18,10 @@ def index(request):
 
 def handlePost(request):
 	#process the post 
-	body = json.loads(request.body)
+	body = json.loads(request.body.decode('utf-8'))
 	message = body.get("message").encode('utf-8')
 
-	#set up the hasher object and hash tehe message using SHA-256
+	#set up the hasher object and hash the message using SHA-256
 	hasher = hashlib.sha256()
 	hasher.update(message)
 	messageHash = hasher.hexdigest()

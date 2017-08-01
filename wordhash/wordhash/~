@@ -1,0 +1,11 @@
+description "Gunicorn application server handling myproject"
+
+start on runlevel [2345]
+stop on runlevel [!2345]
+
+respawn
+setuid ubuntu
+setgid www-data
+chdir /home/ubuntu/messageHash
+
+exec messagehash/bin/gunicorn --workers 3 --bind unix:/home/ubuntu/wordhash/wordhash.sock wordhash.wsgi:application
