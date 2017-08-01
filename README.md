@@ -43,8 +43,8 @@ To download the latest version of Python 3 use the following command:
 To isolate this install of Python on the server a virtualenv will be used.  This can be placed anywhere, and simply acts as a place to store python libraries for this environment. To set up a virtualenv run the following.
 
 > pip install virtualenv
-> virtualenv [location_of_choice]
-> cd [location_of_choice]
+> virtualenv [path_of_messageHash_progject]
+> cd [path_of_messageHash_progject]
 > source bin/activate
 
 **NOTE: From here on out all of the installation will take place in the virtualenv**
